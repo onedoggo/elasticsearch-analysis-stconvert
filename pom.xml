@@ -29,7 +29,7 @@
     </developers>
 
     <properties>
-        <elasticsearch.version>8.4.1</elasticsearch.version>
+        <elasticsearch.version>8.8.0</elasticsearch.version>
         <maven.compiler.target>1.8</maven.compiler.target>
         <elasticsearch.assembly.descriptor>${project.basedir}/src/main/assemblies/plugin.xml</elasticsearch.assembly.descriptor>
         <elasticsearch.plugin.name>analysis-stconvert</elasticsearch.plugin.name>
@@ -79,6 +79,12 @@
             <artifactId>elasticsearch</artifactId>
             <version>${elasticsearch.version}</version>
             <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.elasticsearch</groupId>
+                    <artifactId>elasticsearch-preallocate</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
    <dependency>
